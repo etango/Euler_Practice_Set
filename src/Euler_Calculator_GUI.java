@@ -36,14 +36,6 @@ public class Euler_Calculator_GUI {
 		GUI_Generator GUI = new GUI_Generator();
 		
 
-		Scanner sc = new Scanner(System.in);
-		Multiply_of_3_and_5 m35 = new Multiply_of_3_and_5();
-		
-		System.out.println("Enter a value");
-		int x = sc.nextInt();
-		
-		m35.setSum(x);
-		System.out.println(m35.getSum());
 		
 		
 	}
