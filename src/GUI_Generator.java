@@ -27,7 +27,6 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.JRadioButton;
 import javax.swing.JRadioButton;
 
-
 /*
  *Changes and update as of 2/17/2019
  *Changes contain frame size scaling base on user current resolution on the operating machine.
@@ -73,6 +72,9 @@ public class GUI_Generator extends JFrame implements ActionListener {
 		JButton Back;
 		JButton Basic;
 		JButton Multiplyof3and5;
+		JButton EvenFibonacciNumber;
+		JButton Sum_Square_Difference;
+		JButton PrimeNumber;
 		JButton Intermediate;
 		JButton Expert;
 		
@@ -130,7 +132,7 @@ public class GUI_Generator extends JFrame implements ActionListener {
 			p.add(Intermediate);
 			p.add(Expert);
 		
-			panel.setLayout(new GridLayout(1,3));
+			panel.setLayout(new GridLayout(5,3));
 			panel.add(bar);
 			panel.add(p);
 			panel.setVisible(argument);
@@ -178,15 +180,29 @@ public class GUI_Generator extends JFrame implements ActionListener {
 			Back.addActionListener(this);
 			Multiplyof3and5 = new JButton("Multiply of 3 and 5");
 			Multiplyof3and5.addActionListener(this);
-
+			EvenFibonacciNumber = new JButton("Even_Fibonacci_Number");
+			EvenFibonacciNumber.addActionListener(this);
+			PrimeNumber = new JButton("Largest prime");
+			PrimeNumber.addActionListener(this);
+			Sum_Square_Difference = new JButton("Sum SQR Differences");
+			Sum_Square_Difference.addActionListener(this);
+			
+			EvenFibonacciNumber.setFont(MY_FONT);
 			Multiplyof3and5.setFont(MY_FONT);
+			PrimeNumber.setFont(MY_FONT);
+			Sum_Square_Difference.setFont(MY_FONT);
 			Back.setFont(MY_FONT);
 			p.removeAll();
 			p.revalidate();
 			p.repaint();
+			p.setLayout(new GridLayout(2,2));
 			
 			p.add(Multiplyof3and5);
+			p.add(EvenFibonacciNumber);
+			p.add(PrimeNumber);
+			p.add(Sum_Square_Difference);
 			p.add(Back);
+			
 			
 			panel.removeAll();
 			panel.add(p);
@@ -209,14 +225,10 @@ public class GUI_Generator extends JFrame implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 		
 			if(e.getSource() == Basic) {
-				
-				basicbuttonGUI(true);
-				
-				
-				
+				basicbuttonGUI(true);				
 				}else if(e.getSource() == Intermediate) {
-					
 				
+		
 			}else if(e.getSource() == Expert) {
 				
 			}
@@ -225,6 +237,17 @@ public class GUI_Generator extends JFrame implements ActionListener {
 				Multiply_of_3_and_5 m35 = new Multiply_of_3_and_5();
 				m35.setSum();
 				m35.getSum();
+			}else if(e.getSource() == EvenFibonacciNumber) {
+				Even_Fibonacci_number efn = new Even_Fibonacci_number();
+				efn.getEven_Fibonacci_number();
+			}else if(e.getSource() == PrimeNumber) {
+				Prime_Factor_Number PN = new Prime_Factor_Number();
+				PN.setPrime_Factor_Number();
+				PN.getPrime_Factor_Number();
+			}else if(e.getSource() == Sum_Square_Difference) {
+				Sum_Square_Difference  SQD = new Sum_Square_Difference();
+				SQD.setSum_Square_Difference();
+				SQD.getSum_Square_Difference();
 			}
 			if(e.getSource() == Back){
 				
